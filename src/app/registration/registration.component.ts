@@ -23,31 +23,26 @@ export class RegistrationComponent implements OnInit {
   // It maintains registration Model
   regModel: Registration;
   // It maintains registration form display status. By default it will be false.
-  showNew: Boolean = false;
+  showNew: Boolean = true;
   // It will be either 'Save' or 'Update' based on operation.
-  submitType: string = 'Save';
+  submitType: string = 'Salvar';
   // It maintains table row index based on selection.
   selectedRow: number;
   // It maintains Array of countries.
   countries: string[] = ['US', 'UK', 'India', 'UAE'];
   constructor() {
-    // Add default registration data.
-    this.registrations.push(new Registration('Johan', 'Peter', {year: 1980, month: 5, day: 12}, 'johan@gmail.com', 'johan123', 'UK'));
-    this.registrations.push(new Registration('Mohamed', 'Tariq', {year: 1975, month: 12, day: 3}, 'tariq@gmail.com', 'tariq123', 'UAE'));
-    this.registrations.push(new Registration('Nirmal', 'Kumar', {year: 1970, month: 7, day: 25}, 'nirmal@gmail.com', 'nirmal123', 'India'));
   
   }
 
   ngOnInit() {}
 
-  // This method associate to New Button.
+  
   onNew() {
     // Initiate new registration.
     this.regModel = new Registration();
     // Change submitType to 'Save'.
     this.submitType = 'Save';
     // display registration entry section.
-    this.showNew = true;
   }
 
   // This method associate to Save Button.
@@ -65,7 +60,7 @@ export class RegistrationComponent implements OnInit {
       this.registrations[this.selectedRow].country = this.regModel.country;
     }
     // Hide registration entry section.
-    this.showNew = false;
+    
   }
 
   // This method associate to Edit Button.
@@ -79,7 +74,7 @@ export class RegistrationComponent implements OnInit {
     // Change submitType to Update.
     this.submitType = 'Update';
     // Display registration entry section.
-    this.showNew = true;
+    
   }
 
   // This method associate to Delete Button.
@@ -89,10 +84,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   // This method associate toCancel Button.
-  onCancel() {
-    // Hide registration entry section.
-    this.showNew = false;
-  }
+  
 
   // This method associate to Bootstrap dropdown selection change.
   onChangeCountry(country: string) {

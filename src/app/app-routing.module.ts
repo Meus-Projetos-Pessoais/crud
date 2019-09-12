@@ -10,7 +10,7 @@ import { ShowComponent} from './show/show.component';
 const routes: Routes = [
   {path: '',component: HomeComponent},
   {path: 'registration',component: RegistrationComponent},
-  {path: 'show',component: RegistrationComponent}
+  {path: 'show',component: ShowComponent}
 
 ];
 
