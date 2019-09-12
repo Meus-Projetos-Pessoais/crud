@@ -10,13 +10,15 @@ import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule } from '@angular/forms';
 
 import { RouterModule, Routes } from '@angular/router';
+import { ShowComponent } from './show/show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,37 @@
+<div class="container">
+        <div class="reglist">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Data de Nascimento</th>
+                <th>Email</th>
+                <th>País</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let show of shows; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ show.firstName }}</td>
+                <td>{{ show.lastName }}</td>
+                <td>{{ show.dob.day + '/' + show.dob.month + '/' + show.dob.year}}</td>
+                <td>{{ show.email }}</td>
+                <td>{{ show.country }}</td>
+                <td>
+                  <button type="button" class="btn btn-info" (click)="onEdit(i)">Edit</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+        <br>
+        
+      </div>
